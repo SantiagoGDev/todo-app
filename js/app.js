@@ -1,7 +1,9 @@
  const $title = document.querySelectorAll('.task__title');
 const $contentTasks = document.querySelector('#tasks');
+const $taskInput = document.querySelector('#modal__input-task');
 let tasksList = [];
 let aux = true;
+let big = true;
 
 const $buttonTask = document.querySelector('#btn_add-task');
 const animateModal = ()=>{
@@ -11,6 +13,7 @@ const animateModal = ()=>{
 	setTimeout(() => {
 		setTimeout(() => {
 			document.querySelector('.modal').classList.remove('modal--open');
+			document.querySelector('.modal__box').classList.remove('modal__box--big');
 		}, 1000);
 		document.querySelector('.modal__box').classList.remove('modal__box--open');
 		document.querySelector('.modal__text-datos').classList.remove('modal__text-datos--active');
@@ -18,7 +21,6 @@ const animateModal = ()=>{
 }
 
 const confirmData = ()=>{
-	const $taskInput = document.querySelector('#modal__input-task');
 	const $desInput = document.querySelector('#modal__input-des');
 
 	if($taskInput.value.length >= 3 && $desInput.value.length  > 10){
@@ -26,6 +28,7 @@ const confirmData = ()=>{
 		$taskInput.value = '';
 		$desInput.value = '';
 		animateModal();
+		big = true;
 
 	}else{
 		console.log('presiona')
@@ -132,22 +135,6 @@ const estadoTask = (task)=>{
 
 }
 
-document.addEventListener('DOMContentLoaded', addTask);
-$contentTasks.addEventListener('click', e =>{
-	e.preventDefault();
-	if(e.target.classList[0] == 'task__icon'){
-		deleteTask(e.path[2].innerText);
-	}
-	if(e.target.classList[0] == 'task__estado'){
-		estadoTask(e.path[2].innerText);
-	}
-	if(e.target.classList[0] == 'task__title'){
-		let index = tasksList.findIndex( element => element.name == e.target.innerHTML);
-		showDescriptionTask(index);
-	}
-})
-
-$buttonTask.addEventListener('click', confirmData);
 function modal(){
 	const openModal = ()=>{
 		const $contentModal = document.querySelector('.modal');
@@ -166,7 +153,7 @@ function modal(){
 				$modal.classList.remove('modal__box--open');
 			}
 		})
-
+		
 	}
 	document.querySelector('.create').addEventListener('click', openModal)
 }
@@ -176,5 +163,27 @@ modal()
 
 
 
+document.addEventListener('DOMContentLoaded', addTask);
+$contentTasks.addEventListener('click', e =>{
+	e.preventDefault();
+	if(e.target.classList[0] == 'task__icon'){
+		deleteTask(e.path[2].innerText);
+	}
+	if(e.target.classList[0] == 'task__estado'){
+		estadoTask(e.path[2].innerText);
+	}
+	if(e.target.classList[0] == 'task__title'){
+		let index = tasksList.findIndex( element => element.name == e.target.innerHTML);
+		showDescriptionTask(index);
+	}
+})
+
+$buttonTask.addEventListener('click', confirmData);
 
 
+$taskInput.addEventListener('click',()=>{
+	if(big){
+		document.querySelector('.modal__box').classList.add('modal__box--big');
+		big = false;
+	}
+})

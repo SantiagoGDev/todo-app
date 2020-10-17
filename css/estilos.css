@@ -213,6 +213,11 @@
 	}
 	.modal__btn{
 		width: 50%;
+		padding: 8px 15px;
+	}
+	.modal__text-datos{
+		padding: 8px 0;
+		font-size: 14px;
 	}
 	.date__fecha,
 	.date__hours{
@@ -234,6 +239,9 @@
 	.date__fecha,
 	.date__hours{
 		font-size: 20px;
+	}
+	.modal__box--big{
+		height: 95%;
 	}
 
 }
