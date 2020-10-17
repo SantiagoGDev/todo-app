@@ -45,7 +45,7 @@
 	align-items: center;
 
 	background: #1cf7ed52;
-	box-shadow: 2px 2px 7px rgba(0,0,0,.2);
+	box-shadow: 2px 2px px rgba(0,0,0,.2);
 	margin-bottom: 20px;
 	padding: 0px 20px;
 	width: 100%;
@@ -222,6 +222,9 @@
 }
 
 @media screen and (max-width: 500px){
+	.modal__box{
+		height: 70%;
+	}
 	.task__title{
 		font-size: 18px;
 	}
