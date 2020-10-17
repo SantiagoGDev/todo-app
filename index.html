@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo-App</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	<h1 class="title">Todo App</h1>	
+	<div class="app">
+		<div class="app-container">
+			<figure class="header">
+				<img src="img/header.jpg" alt="" class="header__img">
+				<div class="date" id="date">
+					<div class="date__fecha" id="date__fecha"></div>
+					<div class="date__hours" id="date__hours"></div>
+				</div>
+			</figure>	
+			<div class="content-tasks" id="tasks"></div>	
+			<div class="app__container-icon">
+				<i class="fas fa-plus-circle create"></i>
+				Agregar Tarea
+			</div>	
+			
+			<div class="modal">
+				<div class="modal__box">
+						<h2 class="modal__title">AGREGA TU TAREA</h2>					
+						<div class="modal__element">
+							<label for="modal__input-task" class="modal__label">Tarea</label>
+							<input type="text" class="modal__input" id="modal__input-task" placeholder="Caracteres mayores a 2">
+						</div>
+						<div class="modal__element">
+							<label for="modal__input-des" class="modal__label">Descripción de la tarea</label>
+							<input type="text" class="modal__input" id="modal__input-des" placeholder="Caracteres mayores a 10">
+						</div>
+						<button class="modal__btn" id="btn_add-task">Agregar</button>
+						<p class="modal__text-datos"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	 <script src="https://kit.fontawesome.com/29c3ef15a1.js" crossorigin="anonymous" async></script>
+	 <script src="js/date.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>
