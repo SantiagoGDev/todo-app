@@ -9,11 +9,11 @@ const $buttonTask = document.querySelector('#btn_add-task');
 const animateModal = ()=>{
 	document.querySelector('.modal__text-datos').classList.add('modal__text-datos--active');
 	document.querySelector('.modal__text-datos').innerHTML = "Tarea agregada correctamente";
+	document.querySelector('.modal__box').classList.remove('modal__box--big');
 	
 	setTimeout(() => {
 		setTimeout(() => {
 			document.querySelector('.modal').classList.remove('modal--open');
-			document.querySelector('.modal__box').classList.remove('modal__box--big');
 		}, 1000);
 		document.querySelector('.modal__box').classList.remove('modal__box--open');
 		document.querySelector('.modal__text-datos').classList.remove('modal__text-datos--active');
@@ -147,10 +147,28 @@ function modal(){
 		window.addEventListener('click', e =>{
 			
 			if(e.target == $contentModal){
-				setTimeout(() => {
-					$contentModal.classList.remove('modal--open');
-				}, 600);
-				$modal.classList.remove('modal__box--open');
+
+
+				if(window.innerWidth < 500){
+					setTimeout(() => {
+						$contentModal.classList.remove('modal--open');
+					}, 1200);
+					setTimeout(() => {
+						$modal.classList.remove('modal__box--open');
+						
+					},900);
+					document.querySelector('.modal__box').classList.remove('modal__box--big');
+					big = true;
+				}else{
+					setTimeout(() => {
+						$contentModal.classList.remove('modal--open');
+					}, 800);
+					$modal.classList.remove('modal__box--open');
+				}
+
+
+	
+				
 			}
 		})
 		

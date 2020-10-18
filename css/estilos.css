@@ -208,6 +208,9 @@
 	.task__title{
 		font-size: 20px;
 	}
+	.modal__title{
+		margin: 10px;
+	}
 	.modal__box{
 		width: 90%;
 	}
@@ -219,6 +222,7 @@
 		padding: 8px 0;
 		font-size: 14px;
 	}
+	
 	.date__fecha,
 	.date__hours{
 		font-size: 25px;
@@ -230,6 +234,12 @@
 	.modal__box{
 		height: 70%;
 	}
+	.modal__box--big{
+		height: 95%;
+	}
+	.modal__title{
+		margin: 8px;
+	}
 	.task__title{
 		font-size: 18px;
 	}
@@ -239,9 +249,6 @@
 	.date__fecha,
 	.date__hours{
 		font-size: 20px;
-	}
-	.modal__box--big{
-		height: 95%;
 	}
 
 }
